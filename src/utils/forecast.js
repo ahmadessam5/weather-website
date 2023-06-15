@@ -12,7 +12,8 @@ const forecast = (latitude,longitude,callback)=>{
              }else{
                 const temp = body.current.temperature
                 const feelLikeTemp = body.current.feelslike
-                callback(undefined, body.current.weather_descriptions[0] +' it now ' + temp + ' degree but it feels like ' + feelLikeTemp+' degree out ')
+                const humidity = body.current.humidity
+                callback(undefined, body.current.weather_descriptions[0] +' it now ' + temp + ' degree but it feels like ' + feelLikeTemp+' degree out ' + 'the humidity is '+humidity+'%')
                 // weather_descriptions:response.body.current.weather_descriptions[0],
                 // temp: response.body.current.temperature,
                 // feelLikeTemp:response.body.current.feelslike
